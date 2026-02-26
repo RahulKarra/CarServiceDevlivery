@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DriveHome — New Car Delivery & Expert Service</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- ═══════════════════════════════
+     MAIN WEBSITE
+════════════════════════════════ -->
+<div id="mainPage" class="page active">
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo" onclick="goTo('home')">Drive<span>Home</span></div>
+    <div class="nav-center">
+      <button class="nav-link" onclick="goTo('home')">Home</button>
+      <button class="nav-link" onclick="goTo('about')">About</button>
+      <button class="nav-link" onclick="goTo('services')">Services</button>
+      <button class="nav-link" onclick="goTo('testimonials')">Testimonials</button>
+      <button class="nav-link" onclick="goTo('contact')">Contact</button>
+    </div>
+    <div class="nav-right">
+      <span class="theme-label" id="themeLabel">☀️</span>
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode"></button>
+      <button class="nav-cta" onclick="showPage('adminPage')">Admin</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <!-- Car background image -->
+    <div class="hero-bg"></div>
+    <!-- Gradient overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Content -->
+    <div class="hero-content">
+      <div class="hero-pill">New in India — Car Expert Home Delivery</div>
+      <h1 class="hero-title">
+        Your new car,<br>
+        <em>delivered</em><br>
+        with expertise.
+      </h1>
+      <p class="hero-desc">We send a certified car enthusiast to your showroom — they explain every feature and drive your brand new car safely home.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="goTo('services')">Book a Service</button>
+        <button class="btn-outline" onclick="goTo('about')">How it works</button>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat">
+          <div class="h-stat-num">1,200<span>+</span></div>
+          <div class="h-stat-label">Cars Delivered</div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-num">4.9<span>★</span></div>
+          <div class="h-stat-label">Average Rating</div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-num">5<span>+</span></div>
+          <div class="h-stat-label">Cities Served</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Scroll to explore
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-inner about-grid">
+      <div class="about-visual">
+        <div class="about-card main">
+          <div class="about-feature-row">
+            <div class="about-feature-icon">🎓</div>
+            <div>
+              <div class="about-feature-title">Certified Enthusiasts</div>
+              <div class="about-feature-desc">Every expert is trained and certified in automobile features and safe driving practices.</div>
+            </div>
+          </div>
+          <div class="about-feature-row">
+            <div class="about-feature-icon">🛡️</div>
+            <div>
+              <div class="about-feature-title">Fully Insured Transit</div>
+              <div class="about-feature-desc">Your brand-new car is covered end-to-end from showroom to your home.</div>
+            </div>
+          </div>
+          <div class="about-feature-row">
+            <div class="about-feature-icon">📱</div>
+            <div>
+              <div class="about-feature-title">Real-time Tracking</div>
+              <div class="about-feature-desc">Track your expert and car live on the map during the entire delivery.</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-card float">
+          <div class="float-num">5+</div>
+          <div class="float-label">Years of Trust</div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">About Us</div>
+        <h2 class="section-heading">We make your new car journey <em style="font-style:italic;color:var(--accent);">perfect.</em></h2>
+        <p class="section-sub" style="margin-bottom:24px;">Buying a new car is exciting — but driving an unfamiliar vehicle off the lot can be daunting. We bridge that gap with expertise, care, and confidence.</p>
+        <p class="section-sub">Our team of car enthusiasts love what they do. They'll know your exact car model inside out before they even arrive.</p>
+        <div style="margin-top:36px;">
+          <button class="btn-primary" onclick="goTo('services')">Explore Services →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="howitworks" class="section">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom:0;">
+        <div class="eyebrow" style="justify-content:center;">Simple Process</div>
+        <h2 class="section-heading">How it works</h2>
+      </div>
+      <div class="steps-row">
+        <div class="step">
+          <div class="step-circle">📋</div>
+          <div class="step-title">Book Online</div>
+          <div class="step-desc">Fill in your car details and choose a service. Takes under 2 minutes.</div>
+        </div>
+        <div class="step">
+          <div class="step-circle">✅</div>
+          <div class="step-title">We Confirm</div>
+          <div class="step-desc">We match you with an expert and confirm your slot within 1 hour.</div>
+        </div>
+        <div class="step">
+          <div class="step-circle">🚗</div>
+          <div class="step-title">Expert Arrives</div>
+          <div class="step-desc">Your expert reaches the showroom, inspects the car, and demos all features.</div>
+        </div>
+        <div class="step">
+          <div class="step-circle">🏠</div>
+          <div class="step-title">Car at Home</div>
+          <div class="step-desc">Safe delivery to your doorstep. Keys handed over, final walkthrough done.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="section-inner">
+      <div class="services-header">
+        <div>
+          <div class="eyebrow">What We Offer</div>
+          <h2 class="section-heading" style="margin-bottom:0;">Our Services</h2>
+        </div>
+        <p class="section-sub" style="max-width:280px;">Every package includes a certified expert and GPS-tracked delivery.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-icon">🚗</span>
+          <div class="service-name">Standard Delivery</div>
+          <div class="service-desc">Expert picks up and drives your car safely home. Covers up to 25km radius from showroom.</div>
+          <div class="service-price">₹999 <small>/ delivery</small></div>
+        </div>
+        <div class="service-card popular">
+          <div class="popular-tag">Most Popular</div>
+          <span class="service-icon">⭐</span>
+          <div class="service-name">Premium + Demo</div>
+          <div class="service-desc">Full feature walkthrough at showroom, safe drive home, and 30-min doorstep demo of every function.</div>
+          <div class="service-price">₹1,999 <small>/ session</small></div>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🎓</span>
+          <div class="service-name">Driving Coaching</div>
+          <div class="service-desc">1-hour one-on-one coaching on your specific car's driving dynamics and safety systems.</div>
+          <div class="service-price">₹2,499 <small>/ session</small></div>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">📱</span>
+          <div class="service-name">Tech Setup</div>
+          <div class="service-desc">Android Auto, Apple CarPlay, dashcam and all connected tech configured perfectly for you.</div>
+          <div class="service-price">₹799 <small>/ setup</small></div>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">📋</span>
+          <div class="service-name">Insurance Assist</div>
+          <div class="service-desc">Our expert explains your policy documents, coverage details and NCB benefits during the visit.</div>
+          <div class="service-price">₹499 <small>/ add-on</small></div>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🌍</span>
+          <div class="service-name">Long Distance</div>
+          <div class="service-desc">Extended delivery beyond 25km anywhere within the city, with full tracking and insurance.</div>
+          <div class="service-price">₹1,499 <small>/ trip</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section">
+    <div class="section-inner">
+      <div class="testimonials-header">
+        <div class="eyebrow">Customer Stories</div>
+        <h2 class="section-heading">What our customers say</h2>
+        <p class="section-sub">Over 1,200 happy customers across 5 cities.</p>
+      </div>
+      <div class="t-grid">
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"The expert knew every single detail about my Nexon EV — from ADAS to the sunroof tilt function. Felt like I had a personal car coach!"</p>
+          <div class="t-author">
+            <div class="t-avatar">R</div>
+            <div><div class="t-name">Rahul Mehta</div><div class="t-car">Tata Nexon EV · Bangalore</div></div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"I was nervous about driving a new car for the first time. DriveHome made it completely stress-free. Booked again for my dad's car too!"</p>
+          <div class="t-author">
+            <div class="t-avatar" style="background:#DBEAFE;color:#2563EB;">P</div>
+            <div><div class="t-name">Priya Sharma</div><div class="t-car">Maruti Brezza · Hyderabad</div></div>
+          </div>
+        </div>
+        <div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"Worth every rupee. The 1-hour feature demo saved me hours of YouTube tutorials. Expert was punctual, courteous and very knowledgeable."</p>
+          <div class="t-author">
+            <div class="t-avatar" style="background:#F3E8FF;color:#7C3AED;">A</div>
+            <div><div class="t-name">Aditya Kapoor</div><div class="t-car">Mercedes C-Class · Mumbai</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-inner">
+      <div class="eyebrow">Get In Touch</div>
+      <div class="contact-grid">
+        <div>
+          <h2 class="section-heading">Contact Us</h2>
+          <p class="section-sub">Have questions? We're here every day, 7 AM to 9 PM.</p>
+          <div class="contact-info-items">
+            <div class="c-item">
+              <div class="c-icon">📞</div>
+              <div><div class="c-title">Phone</div><div class="c-val">+91 98765 43210</div></div>
+            </div>
+            <div class="c-item">
+              <div class="c-icon">📧</div>
+              <div><div class="c-title">Email</div><div class="c-val">hello@drivehome.in</div></div>
+            </div>
+            <div class="c-item">
+              <div class="c-icon">📍</div>
+              <div><div class="c-title">Cities</div><div class="c-val">Bangalore · Hyderabad · Mumbai · Pune · Chennai</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-area">
+          <div class="form-row">
+            <div class="form-group"><label class="f-label">Name</label><input type="text" class="f-input" placeholder="Your name"></div>
+            <div class="form-group"><label class="f-label">Phone</label><input type="tel" class="f-input" placeholder="+91 98765 43210"></div>
+          </div>
+          <div class="form-group"><label class="f-label">Car Model</label><input type="text" class="f-input" placeholder="e.g. Kia Seltos HTX+"></div>
+          <div class="form-group">
+            <label class="f-label">Service</label>
+            <select class="f-select f-input">
+              <option>Standard Delivery</option>
+              <option>Premium Delivery + Demo</option>
+              <option>Driving Coaching</option>
+              <option>Tech Setup</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="f-label">Message</label><textarea class="f-textarea" placeholder="Any special requirements?"></textarea></div>
+          <button class="btn-primary" style="width:100%;padding:14px;" onclick="toast('Message sent! We\'ll call you shortly.')">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="f-brand-name">Drive<span>Home</span></div>
+        <p class="f-brand-desc">India's first premium new car delivery and feature demo service. Making your new car journey perfect.</p>
+      </div>
+      <div class="f-col">
+        <div class="f-col-title">Navigate</div>
+        <ul>
+          <li><a onclick="goTo('home')">Home</a></li>
+          <li><a onclick="goTo('about')">About</a></li>
+          <li><a onclick="goTo('services')">Services</a></li>
+          <li><a onclick="goTo('testimonials')">Reviews</a></li>
+          <li><a onclick="goTo('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <div class="f-col-title">Services</div>
+        <ul>
+          <li><a>Standard Delivery</a></li>
+          <li><a>Premium + Demo</a></li>
+          <li><a>Driving Coaching</a></li>
+          <li><a>Tech Setup</a></li>
+          <li><a>Long Distance</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <div class="f-col-title">Cities</div>
+        <ul>
+          <li><a>Bangalore</a></li>
+          <li><a>Hyderabad</a></li>
+          <li><a>Mumbai</a></li>
+          <li><a>Pune</a></li>
+          <li><a>Chennai</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="f-copy">© 2025 DriveHome. All rights reserved.</div>
+      <div class="f-links">
+        <a>Privacy Policy</a>
+        <a>Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /mainPage -->
+
+
+<!-- ═══════════════════════════════
+     ADMIN LOGIN
+════════════════════════════════ -->
+<div id="adminPage" class="page">
+  <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg);padding:24px;">
+    <div class="login-wrap">
+      <div class="login-left">
+        <div>
+          <div class="login-brand">DriveHome</div>
+          <div class="login-brand-sub">Admin Control Panel</div>
+        </div>
+        <div class="login-illustration">🚗</div>
+        <div class="login-quote">"Managing your car delivery service, all in one place."</div>
+      </div>
+      <div class="login-right">
+        <button class="admin-back-btn" onclick="showPage('mainPage')">← Back to site</button>
+        <div class="login-title">Welcome back</div>
+        <div class="login-sub">Sign in to the admin dashboard</div>
+
+        <div class="login-error" id="loginError">⚠ Incorrect username or password.</div>
+
+        <div class="form-group">
+          <label class="f-label">Username</label>
+          <input type="text" class="f-input" id="adminUser" placeholder="admin" value="admin">
+        </div>
+        <div class="form-group">
+          <label class="f-label">Password</label>
+          <input type="password" class="f-input" id="adminPass" placeholder="••••••••" value="admin123">
+        </div>
+        <button class="btn-primary" style="width:100%;padding:13px;margin-top:4px;" onclick="adminLogin()">Sign In →</button>
+        <div class="login-hint" style="margin-top:16px;">Hint: <span>admin</span> / <span>admin123</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════
+     ADMIN DASHBOARD
+════════════════════════════════ -->
+<div id="dashPage" class="page">
+
+  <!-- Top bar -->
+  <div class="dash-topbar">
+    <div class="dash-brand">Drive<span>Home</span> <span style="font-size:13px;font-family:'Outfit';font-weight:400;color:var(--muted);">Admin</span></div>
+    <div class="dash-topbar-right">
+      <span class="theme-label" id="dashThemeLabel">☀️</span>
+      <button class="theme-toggle" onclick="toggleTheme()"></button>
+      <div class="dash-avatar">A</div>
+      <button class="dash-logout" onclick="showPage('mainPage')">Logout</button>
+    </div>
+  </div>
+
+  <div class="dash-layout">
+    <!-- Sidebar -->
+    <div class="dash-sidebar">
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Main</div>
+        <button class="sidebar-btn active" onclick="switchTab(this,'tabOverview')"><span class="sidebar-btn-icon">📊</span> Overview</button>
+        <button class="sidebar-btn" onclick="switchTab(this,'tabBookings')"><span class="sidebar-btn-icon">📋</span> Bookings</button>
+        <button class="sidebar-btn" onclick="switchTab(this,'tabOffers')"><span class="sidebar-btn-icon">🏷️</span> Offers</button>
+        <button class="sidebar-btn" onclick="switchTab(this,'tabAddons')"><span class="sidebar-btn-icon">⚡</span> Add-ons</button>
+      </div>
+      <div class="sidebar-group">
+        <div class="sidebar-group-label">Manage</div>
+        <button class="sidebar-btn" onclick="switchTab(this,'tabExperts')"><span class="sidebar-btn-icon">👨‍💼</span> Experts</button>
+        <button class="sidebar-btn" onclick="switchTab(this,'tabPayments')"><span class="sidebar-btn-icon">💳</span> Payments</button>
+        <button class="sidebar-btn" onclick="switchTab(this,'tabSettings')"><span class="sidebar-btn-icon">⚙️</span> Settings</button>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="dash-main">
+
+      <!-- Overview -->
+      <div id="tabOverview" class="dash-tab active">
+        <div class="dash-page-title">Dashboard</div>
+        <div class="dash-page-sub">Here's what's happening today.</div>
+        <div class="kpi-row">
+          <div class="kpi"><div class="kpi-label">Total Bookings</div><div class="kpi-value">1,247</div><div class="kpi-change">↑ 12% this month</div><div class="kpi-icon">📋</div></div>
+          <div class="kpi"><div class="kpi-label">Revenue</div><div class="kpi-value">₹8.4L</div><div class="kpi-change">↑ 18% this month</div><div class="kpi-icon">💰</div></div>
+          <div class="kpi"><div class="kpi-label">Active Experts</div><div class="kpi-value">28</div><div class="kpi-change">3 on leave today</div><div class="kpi-icon">👨‍💼</div></div>
+          <div class="kpi"><div class="kpi-label">Avg Rating</div><div class="kpi-value">4.9★</div><div class="kpi-change">From 980 reviews</div><div class="kpi-icon">⭐</div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-header"><div class="panel-title">Today's Bookings</div><button class="btn-sm" onclick="switchTab(document.querySelector('[onclick*=tabBookings]'),'tabBookings')">View All</button></div>
+          <table>
+            <thead><tr><th>Customer</th><th>Car</th><th>Service</th><th>City</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Rahul Mehta</td><td>Tata Nexon EV</td><td>Premium + Demo</td><td>Bangalore</td><td><span class="badge badge-green">Done</span></td></tr>
+              <tr><td>Priya Sharma</td><td>Maruti Brezza</td><td>Standard Delivery</td><td>Hyderabad</td><td><span class="badge badge-green">Done</span></td></tr>
+              <tr><td>Aditya Kapoor</td><td>Mercedes C-Class</td><td>Premium + Demo</td><td>Mumbai</td><td><span class="badge badge-amber">In Progress</span></td></tr>
+              <tr><td>Sneha Reddy</td><td>Kia Seltos</td><td>Tech Setup</td><td>Pune</td><td><span class="badge badge-gray">Upcoming</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Bookings -->
+      <div id="tabBookings" class="dash-tab">
+        <div class="dash-page-title">Bookings</div>
+        <div class="dash-page-sub">All customer bookings across cities.</div>
+        <div class="panel">
+          <div class="panel-header"><div class="panel-title">All Records</div><button class="btn-sm">Export CSV</button></div>
+          <table>
+            <thead><tr><th>#ID</th><th>Customer</th><th>Car</th><th>Service</th><th>Amount</th><th>Payment</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>#1247</td><td>Rahul Mehta</td><td>Tata Nexon EV</td><td>Premium + Demo</td><td>₹1,999</td><td><span class="badge badge-green">Paid</span></td><td><span class="badge badge-green">Done</span></td></tr>
+              <tr><td>#1246</td><td>Priya Sharma</td><td>Brezza Turbo</td><td>Standard Delivery</td><td>₹999</td><td><span class="badge badge-green">Paid</span></td><td><span class="badge badge-green">Done</span></td></tr>
+              <tr><td>#1245</td><td>Aditya Kapoor</td><td>C-Class AMG</td><td>Premium + Demo</td><td>₹1,999</td><td><span class="badge badge-green">Paid</span></td><td><span class="badge badge-amber">Active</span></td></tr>
+              <tr><td>#1244</td><td>Nisha Patel</td><td>MG Astor</td><td>Tech Setup</td><td>₹799</td><td><span class="badge badge-amber">Pending</span></td><td><span class="badge badge-gray">Upcoming</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Offers -->
+      <div id="tabOffers" class="dash-tab">
+        <div class="dash-page-title">Offers</div>
+        <div class="dash-page-sub">Create and manage promotional offers.</div>
+        <div class="panel">
+          <div class="panel-header"><div class="panel-title">Active Offers</div><button class="btn-sm" onclick="openModal('offerModal')">+ New Offer</button></div>
+          <table>
+            <thead><tr><th>Name</th><th>Code</th><th>Discount</th><th>Valid Till</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="offersBody">
+              <tr><td>New Customer</td><td>NEWCAR20</td><td>20% off</td><td>31 Dec 2025</td><td><span class="badge badge-green">Active</span></td><td class="action-cell"><button class="btn-xs btn-edit">Edit</button><button class="btn-xs btn-del" onclick="delRow(this)">Delete</button></td></tr>
+              <tr><td>Luxury Deal</td><td>LUXURY30</td><td>30% off</td><td>31 Jan 2026</td><td><span class="badge badge-green">Active</span></td><td class="action-cell"><button class="btn-xs btn-edit">Edit</button><button class="btn-xs btn-del" onclick="delRow(this)">Delete</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Addons -->
+      <div id="tabAddons" class="dash-tab">
+        <div class="dash-page-title">Add-ons</div>
+        <div class="dash-page-sub">Manage service add-ons for customers.</div>
+        <div class="panel">
+          <div class="panel-header"><div class="panel-title">Add-on Services</div><button class="btn-sm" onclick="openModal('addonModal')">+ New Add-on</button></div>
+          <table>
+            <thead><tr><th>Add-on</th><th>Description</th><th>Price</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="addonsBody">
+              <tr><td>Insurance Assist</td><td>Policy explanation walkthrough</td><td>₹499</td><td><span class="badge badge-green">Active</span></td><td class="action-cell"><button class="btn-xs btn-edit">Edit</button><button class="btn-xs btn-del" onclick="delRow(this)">Delete</button></td></tr>
+              <tr><td>Tech Setup</td><td>CarPlay, dashcam, sensors</td><td>₹799</td><td><span class="badge badge-green">Active</span></td><td class="action-cell"><button class="btn-xs btn-edit">Edit</button><button class="btn-xs btn-del" onclick="delRow(this)">Delete</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Experts -->
+      <div id="tabExperts" class="dash-tab">
+        <div class="dash-page-title">Experts</div>
+        <div class="dash-page-sub">Your certified car enthusiast team.</div>
+        <div class="panel">
+          <div class="panel-header"><div class="panel-title">Expert Roster</div><button class="btn-sm" onclick="openModal('expertModal')">+ Add Expert</button></div>
+          <table>
+            <thead><tr><th>Name</th><th>Specialization</th><th>City</th><th>Deliveries</th><th>Rating</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="expertsBody">
+              <tr><td>Arjun Sharma</td><td>EV Specialist</td><td>Bangalore</td><td>234</td><td>4.9★</td><td><span class="badge badge-green">Active</span></td><td class="action-cell"><button class="btn-xs btn-edit">Edit</button><button class="btn-xs btn-del" onclick="delRow(this)">Delete</button></td></tr>
+              <tr><td>Ravi Kumar</td><td>Luxury Cars</td><td>Mumbai</td><td>189</td><td>5.0★</td><td><span class="badge badge-green">Active</span></td><td class="action-cell"><button class="btn-xs btn-edit">Edit</button><button class="btn-xs btn-del" onclick="delRow(this)">Delete</button></td></tr>
+              <tr><td>Suresh Menon</td><td>Performance Cars</td><td>Chennai</td><td>156</td><td>4.8★</td><td><span class="badge badge-amber">On Leave</span></td><td class="action-cell"><button class="btn-xs btn-edit">Edit</button><button class="btn-xs btn-del" onclick="delRow(this)">Delete</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Payments (Gateway Ready) -->
+      <div id="tabPayments" class="dash-tab">
+        <div class="dash-page-title">Payments</div>
+        <div class="dash-page-sub">Payment gateway management & transaction history.</div>
+        <div class="panel">
+          <div class="panel-header"><div class="panel-title">Gateway Configuration</div></div>
+          <div style="padding:20px;background:var(--accent-2);border-radius:8px;margin-bottom:24px;border:1px dashed var(--accent);">
+            <div style="font-size:13px;font-weight:600;color:var(--accent);margin-bottom:6px;">🔌 Payment Gateway Integration Ready</div>
+            <div style="font-size:12px;color:var(--muted);line-height:1.7;">
+              This section is pre-built to plug in your payment gateway.<br>
+              <strong>Razorpay:</strong> Add your Key ID below and activate.<br>
+              <strong>Stripe:</strong> Enter your Publishable Key and Secret Key via backend.<br>
+              <strong>PayU:</strong> Enter Merchant Key and Salt.
+            </div>
+          </div>
+          <div class="form-row" style="margin-bottom:16px;">
+            <div class="form-group"><label class="f-label">Gateway Provider</label>
+              <select class="f-select f-input"><option>Razorpay</option><option>Stripe</option><option>PayU</option><option>CCAvenue</option></select>
+            </div>
+            <div class="form-group"><label class="f-label">Mode</label>
+              <select class="f-select f-input"><option>Test Mode</option><option>Live Mode</option></select>
+            </div>
+          </div>
+          <div class="form-group"><label class="f-label">API Key / Key ID</label><input class="f-input" placeholder="rzp_test_xxxxxxxxxxxx"></div>
+          <button class="btn-sm" onclick="toast('Gateway settings saved! Switch to Live Mode when ready.')">Save Gateway Settings</button>
+        </div>
+        <div class="panel">
+          <div class="panel-header"><div class="panel-title">Recent Transactions</div></div>
+          <table>
+            <thead><tr><th>Txn ID</th><th>Customer</th><th>Amount</th><th>Method</th><th>Gateway Ref</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>#TXN1247</td><td>Rahul Mehta</td><td>₹1,999</td><td>UPI</td><td>pay_xxxxx001</td><td><span class="badge badge-green">Success</span></td></tr>
+              <tr><td>#TXN1246</td><td>Priya Sharma</td><td>₹999</td><td>Card</td><td>pay_xxxxx002</td><td><span class="badge badge-green">Success</span></td></tr>
+              <tr><td>#TXN1244</td><td>Nisha Patel</td><td>₹799</td><td>Netbanking</td><td>—</td><td><span class="badge badge-amber">Pending</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Settings -->
+      <div id="tabSettings" class="dash-tab">
+        <div class="dash-page-title">Settings</div>
+        <div class="dash-page-sub">Manage your site and business configuration.</div>
+        <div class="panel">
+          <div class="panel-header"><div class="panel-title">Business Details</div></div>
+          <div class="form-row">
+            <div class="form-group"><label class="f-label">Business Name</label><input class="f-input" value="DriveHome Pro"></div>
+            <div class="form-group"><label class="f-label">Phone</label><input class="f-input" value="+91 98765 43210"></div>
+          </div>
+          <div class="form-group"><label class="f-label">Email</label><input class="f-input" value="hello@drivehome.in"></div>
+          <div class="form-row">
+            <div class="form-group"><label class="f-label">Delivery Radius (km)</label><input class="f-input" value="25"></div>
+            <div class="form-group"><label class="f-label">Booking Window Hours</label><input class="f-input" value="1"></div>
+          </div>
+          <button class="btn-sm" onclick="toast('Settings saved successfully!')">Save Changes</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══ MODALS ═══ -->
+
+<!-- Offer Modal -->
+<div class="modal-bg" id="offerModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('offerModal')">✕</button>
+    <div class="modal-title">New Offer</div>
+    <div class="form-group"><label class="f-label">Offer Name</label><input class="f-input" id="oName" placeholder="e.g. Festival Special"></div>
+    <div class="form-row">
+      <div class="form-group"><label class="f-label">Code</label><input class="f-input" id="oCode" placeholder="FEST50"></div>
+      <div class="form-group"><label class="f-label">Discount</label><input class="f-input" id="oDisc" placeholder="20% or ₹500"></div>
+    </div>
+    <div class="form-group"><label class="f-label">Valid Until</label><input type="date" class="f-input" id="oDate"></div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('offerModal')">Cancel</button>
+      <button class="btn-sm" onclick="addOffer()">Add Offer</button>
+    </div>
+  </div>
+</div>
+
+<!-- Addon Modal -->
+<div class="modal-bg" id="addonModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('addonModal')">✕</button>
+    <div class="modal-title">New Add-on</div>
+    <div class="form-group"><label class="f-label">Add-on Name</label><input class="f-input" id="aName" placeholder="e.g. GPS Tracker Setup"></div>
+    <div class="form-group"><label class="f-label">Description</label><input class="f-input" id="aDesc" placeholder="Brief description"></div>
+    <div class="form-group"><label class="f-label">Price</label><input class="f-input" id="aPrice" placeholder="₹599"></div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('addonModal')">Cancel</button>
+      <button class="btn-sm" onclick="addAddon()">Add Add-on</button>
+    </div>
+  </div>
+</div>
+
+<!-- Expert Modal -->
+<div class="modal-bg" id="expertModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('expertModal')">✕</button>
+    <div class="modal-title">Add Expert</div>
+    <div class="form-row">
+      <div class="form-group"><label class="f-label">Name</label><input class="f-input" id="eName" placeholder="Full name"></div>
+      <div class="form-group"><label class="f-label">City</label><input class="f-input" id="eCity" placeholder="City"></div>
+    </div>
+    <div class="form-group"><label class="f-label">Specialization</label><input class="f-input" id="eSpec" placeholder="e.g. EV Specialist"></div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal('expertModal')">Cancel</button>
+      <button class="btn-sm" onclick="addExpert()">Add Expert</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
